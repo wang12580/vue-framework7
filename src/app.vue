@@ -60,7 +60,7 @@
               ></f7-list-item>
             </f7-list>
           </f7-page>
-        </f7-pages>       
+        </f7-pages>
       </f7-view>
     </f7-panel>
 
@@ -76,7 +76,8 @@
         </f7-navbar>
         <!-- Pages -->
         <f7-pages>
-          <main-page></main-page>
+          <table-page></table-page>
+          <!-- <main-page></main-page> -->
         </f7-pages>
         <!-- IOS Theme Toolbar -->
         <f7-toolbar v-if="$theme.ios">
@@ -141,14 +142,14 @@
                 <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
               </f7-list-label>
             </f7-list>
-          </f7-page> 
+          </f7-page>
         </f7-pages>
       </f7-view>
     </f7-login-screen>
 
     <f7-popover style="width: 240px">
       <f7-list>
-        <f7-list-button v-for="(btn, index) in popoverBtns" 
+        <f7-list-button v-for="(btn, index) in popoverBtns"
           :href="btn.link"
           :key="index"
           close-popover
@@ -160,6 +161,7 @@
 
 <script>
 import MainPage from './pages/mainPage.vue'
+import tablePage from './pages/table/tablePage.vue'
 
 export default {
   data () {
@@ -193,7 +195,7 @@ export default {
           link: '/swipeToDelete/',
         }, {
           title: 'Swiper Slider',
-          link: '/swiperSlider/',          
+          link: '/swiperSlider/',
         }, {
           title: 'Tabs',
           link: '/tabs/'
@@ -222,7 +224,7 @@ export default {
       ]
     }
   },
-  components: { MainPage },
+  components: { MainPage, tablePage },
   methods: {
     closeLogin: function () {
       let loginText = 'Username:' + this.username + ',password:' + this.password
